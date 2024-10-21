@@ -1,3 +1,7 @@
+package tn.esprit.gestionzoo.main;
+
+import tn.esprit.gestionzoo.entities.*;
+
 public class ZooManagement {
     public static void main(String[] args) {
         //  Scanner sc = new Scanner(System.in);
@@ -8,12 +12,14 @@ public class ZooManagement {
         // System.out.println(name+" comporte "+nbrCages+" cages");
 
         Animal lion = new Animal();
-        lion.isMammal=true;
-        lion.age=3;
+        //lion.isMammal=true;
+        //lion.age=3;
+        lion.setAge(3);
+        lion.setMammal(true);
         Zoo myZoo = new Zoo();
-        myZoo.city="bardo";
-        myZoo.name="zoo";
-        myZoo.nbCages=30;
+        myZoo.setCity("bardo");
+        myZoo.setCity("zoo");
+        myZoo.setNbCages(30);
         Animal dog = new Animal("chien","bobo",3,true);
         Animal chat = new Animal("siamoi","chat",5,true);
         //  myZoo.displayZoo();
@@ -31,9 +37,25 @@ public class ZooManagement {
         System.out.println("myZoo"+z);
         System.out.println(myZoo.searchAnimal(dog));
 
-        System.out.println(myZoo.nbAnimalsTotal);
+        System.out.println(z.getNbAnimalsTotal());
         System.out.println(z.comparer(myZoo));
         System.out.println(Zoo.comparerZoo(z,myZoo));
+
+        Aquatic A = new Aquatic();
+        Terrestrial T =new Terrestrial();
+        Dolphin D=new Dolphin();
+        Penguin P=new Penguin();
+
+
+        System.out.println(A);
+        System.out.println(T);
+        System.out.println(D);
+        System.out.println(P);
+
+        A.swim();
+        D.swim();
+        P.swim();
+
 
 
 

@@ -1,12 +1,49 @@
+package tn.esprit.gestionzoo.entities;
+
 public class Zoo {
-    String name,city;
-    Animal[] animals;
-    int nbCages;
+   private String name,city;
+    private Animal[] animals;
+    private int nbCages;
 
     //public  static  final int nbCages=25;
 
     int nbAnimals;
-    static int nbAnimalsTotal;
+    private static int nbAnimalsTotal;
+
+    // Getters et Setters pour les attributs
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public int getNbCages() {
+        return nbCages;
+    }
+
+    public void setNbCages(int nbCages) {
+        this.nbCages = nbCages;
+        animals = new Animal[nbCages];
+    }
+
+    public int getNbAnimals() {
+        return nbAnimals;
+    }
+
+    public static int getNbAnimalsTotal() {
+        return nbAnimalsTotal;
+    }
+
 
     public Zoo(String name,String city,int nbCages){
         this.nbCages=nbCages;
@@ -16,14 +53,14 @@ public class Zoo {
 
     }
 //hethaa ta madame ama mahebech yemchili fih mouchkla
-//    public Zoo() {
-//        animals =new Animal[nbCages];
+//    public tn.esprit.gestionzoo.entities.Zoo() {
+//        animals =new tn.esprit.gestionzoo.entities.Animal[nbCages];
 //    }
 //hetha taa el chat
     public Zoo() {
         this.nbCages = 10;  // Définir un nombre de cages par défaut
         animals = new Animal[nbCages];  // Initialisation du tableau d'animaux
-        this.name = "Default Zoo";  // Optionnel : donner un nom par défaut
+        this.name = "Default tn.esprit.gestionzoo.entities.Zoo";  // Optionnel : donner un nom par défaut
         this.city = "Default City";  // Optionnel : donner une ville par défaut
     }
     public void displayZoo(){
@@ -53,7 +90,8 @@ public class Zoo {
     }
     public int searchAnimal(Animal animal){
         for(int i=0;i<nbAnimals;i++){
-            if(animals[i].name==animal.name){
+            //if(animals[i].name==animal.name)
+             if(animals[i].getName().equals(animal.getName())){
                 return  i;
             }
         }
@@ -88,4 +126,6 @@ public class Zoo {
         }
         return  z2;
     }
+
+
 }
